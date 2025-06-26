@@ -1,3 +1,5 @@
+@import "./color";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,21 +7,15 @@
 }
 
 body {
-  aside {
-    ul {
-      list-style-type: none;
-      li {
-        a {
-          text-decoration: none;
-        }
-      }
-    }
-  }
   div#root {
     width: calc(100vw);
     height: calc(100vh);
     position: fixed;
     top: 0;
-    left: 300px;
+    left: 0;
+    background-color: $black;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
   }
 }

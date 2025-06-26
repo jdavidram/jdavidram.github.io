@@ -6,10 +6,10 @@ function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path='/' element={ <Layout>Hello World!!</Layout> } />
-        <Route path='/about' element={ <Layout>About me</Layout> } />
-        <Route path='/projects' element={ <Layout>Projects</Layout> } />
-        <Route path='/contact' element={ <Layout>Contact</Layout> } />
+        <Route path='/' element={ <Layout><main>Hello World!!</main></Layout> } />
+        <Route path='/about' element={ <Layout><main>About me</main></Layout> } />
+        <Route path='/projects' element={ <Layout><main>Projects</main></Layout> } />
+        <Route path='/contact' element={ <Layout><main>Contact</main></Layout> } />
       </Routes>
     </HashRouter>
   );
