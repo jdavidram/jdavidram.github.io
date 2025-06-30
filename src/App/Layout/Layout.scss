@@ -1,5 +1,35 @@
 @import "../color";
 
+@mixin themeHeader($color) {
+    span {
+        svg g {
+            circle {
+                stroke: $color;
+            }
+            ellipse {
+                fill: $color;
+            }
+        }
+        p {
+            color: $color;
+        }
+    }
+    ul {
+        li:hover {
+            border-color: $color;
+            a {
+                color: $color;
+            }
+        }
+    }
+}
+
+@mixin themeFooter($color) {
+    ul li a svg:hover {
+        color: $color;
+    }
+}
+
 header {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
@@ -48,6 +78,15 @@ header {
             }
         }
     }
+    &.environmental {
+        @include themeHeader($leaf);
+    }
+    &.data {
+        @include themeHeader($data);
+    }
+    &.gis {
+        @include themeHeader($gis);
+    }
 }
 
 main {
@@ -70,9 +109,18 @@ footer {
             a svg {
                 width: 30px;
                 height: 30px;
-                color: $grey;
+                color: $white;
                 transition: 0.5s all ease;
             }
         }
+    }
+    &.environmental {
+        @include themeFooter($leaf);
+    }
+    &.data {
+        @include themeFooter($data);
+    }
+    &.gis {
+        @include themeFooter($gis);
     }
 }
