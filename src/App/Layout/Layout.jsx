@@ -1,49 +1,58 @@
-import "./Layout.scss";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { ReactComponent as Logo } from "../logo.svg";
-import { Link } from "react-router-dom";
-import { FaInstagram, FaLinkedin, FaGithub, FaThreads } from "react-icons/fa6";
+import { useState } from "react";
+import "./Layout.scss";
 
-function Layout({ children, career }) {
+function Layout({ children }) {
+    const move = (direction) => {
+        if (direction === "left") {
+            document.getElementById("root").style.left = "0px";
+            setArrow("right");
+        } else {
+            document.getElementById("root").style.left = "calc(100vw - 50px)";
+            setArrow("left");
+        }
+    }
+    const [arrow, setArrow] = useState("right");
     return (
         <>
-        <header className={ career }>
-            <span>
+        <header>
+            <span id="arrow" className={ arrow }>
+                <FaRegArrowAltCircleRight onClick={() => move(arrow)} />
+            </span>
+            <span id="logo">
                 <Logo />
-                <p>jdavid.ram</p>
+                <h2>jdavid.ram</h2>
             </span>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <Link to="/about">About me</Link>
+                    <a href="/about">About</a>
                 </li>
                 <li>
-                    <Link to="/projects">Projects</Link>
+                    <a href="#">Projects</a>
                 </li>
             </ul>
         </header>
         { children }
-        <footer className={ career }>
+        <footer>
             <ul>
                 <li>
-                    <a href="https://www.instagram.com/jdavid.ram?igsh=bmE0NTFidzdhdmZt&utm_source=qr" target="_blank" rel="noopener noreferrer">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
                         <FaInstagram />
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/david-ramirez-rodriguez/" target="_blank" rel="noopener noreferrer">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin />
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/jdavidram" target="_blank" rel="noopener noreferrer">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.threads.com/@jdavid.ram?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer">
-                        <FaThreads />
                     </a>
                 </li>
             </ul>

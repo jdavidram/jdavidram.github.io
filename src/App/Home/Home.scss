@@ -1,66 +1,42 @@
 @import "../color";
 
-@mixin theme($color) {
-    figure {
-        border-color: $color;
-    }
-    span {
-        h1 {
-            color: $color;
-        }
-        h2 strong {
-            color: $color;
-        }
-        h3 strong {
-            color: $color;
-        }
-    }
-}
-
 main#home {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    figure {
-        width: calc((100vh - 50px) / 2);
-        height: calc((100vh - 50px) / 2);
+    div.sticker {
+        width: 250px;
+        max-width: calc(100vw - 100px);
+        height: min(250px, calc(100vw - 100px));
         padding: 10px;
+        border: 2px solid $main;
         border-radius: 50%;
-        border: 5px solid $main;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.5s all ease;
         img {
             width: calc(100%);
             height: calc(100%);
         }
     }
-    span {
-        width: calc((100vw - 50px) / 2);
+    aside {
+        text-align: center;
         h1 {
-            font-size: 2em;
-            text-align: center;
-            text-transform: capitalize;
-            color: $main;
-            transition: 0.5s all ease;
-        }
-        h2 {
-            font-size: 2em;
-            font-weight: 400;
-            text-align: center;
             color: $white;
             strong {
-                transition: 0.5s all ease;
+                color: $main;
             }
         }
+        h2 {
+            color: $main;
+        }
         h3 {
-            font-size: 1.5em;
-            text-align: center;
             color: $white;
             strong {
-                font-weight: 400;
+                color: $main;
             }
         }
         ul {
@@ -71,30 +47,11 @@ main#home {
             li {
                 padding: 10px;
                 svg {
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                     color: $white;
-                    cursor: pointer;
-                }
-                &:nth-child(1) svg {
-                    color: $leaf;
-                }
-                &:nth-child(2) svg {
-                    color: $data;
-                }
-                &:nth-child(3) svg {
-                    color: $gis;
                 }
             }
         }
-    }
-    &.environmental {
-        @include theme($leaf);
-    }
-    &.data {
-        @include theme($data);
-    }
-    &.gis {
-        @include theme($gis);
     }
 }

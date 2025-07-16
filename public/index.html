@@ -9,9 +9,28 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="icon" href="%PUBLIC_URL%/logo.svg" />
     <title>jdavid.ram</title>
+    <script>
+      function moveTo() {
+        document.getElementById("root").style.left = "0px";
+        document.getElementById("arrow").className = "right";
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <aside id="nav">
+      <ul onclick="moveTo()">
+        <li>
+          <a href="#/">Home</a>
+        </li>
+        <li>
+          <a href="#/about">About</a>
+        </li>
+        <li>
+          <a href="#">Projects</a>
+        </li>
+      </ul>
+    </aside>
     <div id="root"></div>
   </body>
 </html>

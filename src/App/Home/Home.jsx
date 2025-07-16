@@ -1,31 +1,31 @@
-import { FaLeaf, FaPython } from "react-icons/fa6";
-import { VscGraphScatter } from "react-icons/vsc";
-import { SiRstudioide, SiPostgresql, SiAnaconda, SiArcgis, SiQgis } from "react-icons/si";
-import hello from "./hello.webp";
+import { IoWater } from "react-icons/io5";
+import { GoGraph } from "react-icons/go";
+import { SiArcgis } from "react-icons/si";
+import hello from "../img/hello.webp";
 import "./Home.scss";
 
-function Home({ career, setCareer }) {
+function Home() {
     return (
-        <main id="home" className={ career.split(" ")[0] }>
-            <figure>
-                <img src={ hello } alt="" />
-            </figure>
-            <span>
-                <h2>Hi, I'm <strong>JDavid Ram</strong></h2>
-                <h1>{ career }</h1>
+        <main id="home">
+            <div className="sticker">
+                <img src={ hello } alt="Hello" />
+            </div>
+            <aside>
+                <h1>Hi, I'm <strong>JDavid Ram</strong></h1>
+                <h2>Environmental Engineer</h2>
                 <ul>
                     <li>
-                        <FaLeaf onMouseOver={ () => setCareer("environmental engineer") } />
+                        <IoWater />
                     </li>
                     <li>
-                        <VscGraphScatter onMouseOver={ () => setCareer("data analyst") } />
+                        <GoGraph />
                     </li>
                     <li>
-                        <SiArcgis onMouseOver={ () => setCareer("gis analyst") } />
+                        <SiArcgis />
                     </li>
                 </ul>
                 <h3>Based in Medellin, <strong>Colombia</strong></h3>
-            </span>
+            </aside>
         </main>
     );
 }

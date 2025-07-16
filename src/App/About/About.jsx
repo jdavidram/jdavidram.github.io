@@ -1,11 +1,11 @@
 import "./About.scss";
 
-function About({ career }) {
+function About() {
     return (
-        <main id="about" className={ career.split(" ")[0] }>
-            <h1>ABOUT ME</h1>
+        <main id="about">
+            <h1>About me</h1>
         </main>
     );
 }
 
-export { About };
+export { About }
