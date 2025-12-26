@@ -35,9 +35,17 @@ header {
         justify-content: center;
         align-items: center;
         a {
-            margin: 10px;
+            margin: 5px;
+            padding: 5px;
             text-decoration: none;
             font-weight: bolder;
+            border-bottom: 3px solid $black;
+            color: $white;
+            transition: 0.5s all ease;
+            &:hover {
+                color: $main;
+                border-color: $grey;
+            }
         }
     }
 }

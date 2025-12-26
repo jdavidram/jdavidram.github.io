@@ -1,0 +1,92 @@
+@import "../color";
+
+main#about {
+    section {
+        height: 200px;
+        margin: 10px 10px 110px 10px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-image: url(https://plus.unsplash.com/premium_photo-1730078556503-5d8fc0587b23?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-color: $black;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+        figure {
+            position: relative;
+            top: 100px;
+            border: 5px solid $black;
+            border-radius: 50%;
+            background-color: $grey;
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+    article {
+        h1 {
+            padding: 20px 0;
+            text-align: center;
+            color: $main;
+        }
+        &.about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            p {
+                margin: 10px;
+                text-align: center;
+                color: $white;
+            }
+            a {
+                text-decoration: none;
+                span {
+                    margin: 10px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    background-color: $grey;
+                    transition: 0.5s all ease;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        margin: 0 5px 0 0;
+                        color: $black;
+                    }
+                    p {
+                        font-weight: bolder;
+                        font-size: 1.2em;
+                        color: $black;
+                    }
+                    &:hover {
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+        &.skills {
+            ul {
+                list-style-type: none;
+                li {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        margin: 10px;
+                    }
+                    p {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

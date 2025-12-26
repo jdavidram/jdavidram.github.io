@@ -27,8 +27,8 @@ function Header() {
             </div>
             <nav>
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/">About</NavLink>
-                <NavLink to="/">Projects</NavLink>
+                <NavLink to="/about">About me</NavLink>
+                <NavLink to="/projects">Projects</NavLink>
             </nav>
         </header>
     );
@@ -42,22 +42,22 @@ function Footer() {
             </span>
             <ul>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/jdavid.ram" target="_blank" rel="noopener noreferrer">
                         <FaSquareInstagram />
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/david-ramirez-rodriguez" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin />
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/jdavidram" target="_blank" rel="noopener noreferrer">
                         <FaSquareGithub />
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.threads.com/@jdavid.ram" target="_blank" rel="noopener noreferrer">
                         <FaSquareThreads />
                     </a>
                 </li>
