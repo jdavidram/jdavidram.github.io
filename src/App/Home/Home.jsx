@@ -7,16 +7,13 @@ import { GiHotSurface, GiComputing } from "react-icons/gi";
 import { LuTangent, LuDam } from "react-icons/lu";
 import { GrGraphQl } from "react-icons/gr";
 import { SiArcgis, SiQgis } from "react-icons/si";
+import { Bubble } from "../Tools/Bubble/Bubble";
 
 function Header({ course }) {
     const msg = "La materia no se pierde ni se destruye, se gana este semestre";
     return (
         <header>
-            <div id="hello">
-                <figure>
-                    <img src={ hello } alt="" />
-                </figure>
-            </div>
+            <Bubble src={ hello } />
             <aside>
                 <h1>¡Aprende <strong>{ course }</strong> sin morir en el intento!</h1>
                 <p>Contactanos y pide tu asesoría personalizada o grupal, en el horario que quieras, como quieras y no te dejes vencer por las materias de la U</p>
