@@ -1,18 +1,68 @@
-import { Instagram, YouTube, Github, Threads } from "../Tools/Icons";
+import { Link } from "react-router-dom";
+import { Instagram, YouTube, Github, Threads, Bars } from "../Tools/Icons";
 import { WhatsApp } from "../Tools/WhatsApp";
 import { ReactComponent as Logo } from "../logo.svg";
 import "./Layout.scss";
+import { useState } from "react";
 
-function Nav() {
+function Aside({ notes }) {
+    if (window.innerWidth <= 600) {
+        return (
+            <ul>
+                <li>
+                    <Link to="/">Contactar</Link>
+                </li>
+                <li>
+                    <Link to="/">Notas de clase</Link>
+                </li>
+            </ul>
+        );
+    } else {
+        return (
+            <ul>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Cálculo diferencial</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Cálculo integral</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Algebra lineal</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Ecuaciones diferenciales</a>
+                </li>
+            </ul>
+        );
+    }
+}
+
+function Header({ notes, setNotes }) {
+    const showHide = {
+        "show": "hide",
+        "hide": "show",
+    };
     return (
-        <nav>
-            <span>
+        <header>
+            <span className="logo">
                 <Logo />
-                <h1>jdavid.ram</h1>
-                <p>Tu mejor apoyo en la U</p>
+                <h2>jdavid.ram</h2>
             </span>
-            <WhatsApp />
-        </nav>
+            <nav>
+                <Link to="/contact">Contactar</Link>
+                <div className="button">
+                    <div className="corner left">
+                        <span>L</span>
+                    </div>
+                    <button onClick={() => setNotes(showHide[notes])}>
+                        <Bars />
+                    </button>
+                    <div className="corner right">
+                        <span>R</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
     );
 }
 
@@ -47,9 +97,13 @@ function Footer() {
 }
 
 function Layout({ children }) {
+    const [notes, setNotes] = useState("hide");
     return (
         <>
-        <Nav />
+        <aside id="notes" className={ notes }>
+            <Aside notes={ notes } />
+        </aside>
+        <Header notes={ notes } setNotes={ setNotes } />
         { children }
         <Footer />
         </>
