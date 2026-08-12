@@ -7,7 +7,6 @@ function App() {
     <HashRouter>
       <Routes>
         <Route index element={ <Home /> } />
-        <Route path='/contact' element={ <Home /> } />
       </Routes>
     </HashRouter>
   );

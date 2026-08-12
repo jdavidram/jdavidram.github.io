@@ -1,139 +1,159 @@
 @import "../color";
 
-aside#notes {
-    overflow-y: hidden;
+div#universe {
+    width: calc(100%);
+    height: calc(100vh);
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
     background-color: $main;
-    transition: 0.5s all ease;
-    &.hide {
-        height: 0px;
-        border-radius: 0;
-    }
-    &.show {
-        height: 50px;
-        border-radius: 0 0 12.5px 12.5px;
-    }
-    ul {
-        height: 50px;
-        padding: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        li {
-            padding: 5px 10px;
-            a {
-                text-decoration: none;
-                color: $white;
-            }
-        }
-    }
-}
-
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        svg {
-            width: 30px;
-            height: 30px;
-            margin: 10px;
-            g {
-                circle {
-                    stroke: $main;
-                }
-                ellipse {
-                    fill: $main;
-                }
-            }
-        }
-        h2 {
-            color: $main;
-        }
-    }
     nav {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        a {
-            text-decoration: none;
-            color: $main;
-        }
-        div.button {
-            margin: 0 10px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            div.corner {
-                width: 25px;
-                height: 25px;
+        background-color: #FFF;
+        div#logo {
+            width: fit-content;
+            display: grid;
+            grid-template-columns: 1fr 50px;
+            grid-template-rows: 50px;
+            span.logo {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 background-color: $main;
-                span {
-                    width: 25px;
-                    height: 25px;
+                border-radius: 0 0 25px 0;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    margin: 10px;
+                    g {
+                        circle {
+                            stroke: $white;
+                        }
+                        ellipse {
+                            fill: $white;
+                        }
+                    }
+                }
+                h1 {
+                    padding: 0 20px 0 0;
+                    font-size: 1.5em;
+                    color: $white;
+                }
+            }
+            span.corner {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                width: 50px;
+                height: 50px;
+                background-color: $main;
+                span.top.left {
+                    width: 50px;
+                    height: 50px;
+                    display: block;
+                    border-radius: 25px 0 0 0;
                     background-color: #FFF;
-                    color: #FFF;
                 }
-                &.left span {
-                    border-radius: 0 50% 0 0;
-                }
-                &.right span {
-                    border-radius: 50% 0 0 0;
+            }
+        }
+        div#button {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            grid-template-rows: 50px;
+            span.corner {
+                width: 50px;
+                height: 50px;
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                background-color: $main;
+                span.top.right {
+                    width: 50px;
+                    height: 50px;
+                    display: block;
+                    border-radius: 0 25px 0 0;
+                    background: #FFF;
                 }
             }
             button {
-                height: 50px;
                 padding: 0 10px;
-                border: none;
-                border-radius: 0 0 12.5px 12.5px;
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                border-radius: 0 0 0 25px;
                 background-color: $main;
-                color: $white;
-                &::before {
-                    content: "Notas de clase";
-                }
+                border: none;
+                display: none;
                 svg {
-                    width: 30px;
-                    height: 30px;
-                    color: $white;
-                    display: none;
+                    width: 40px;
+                    height: 40px;
+                    margin: 5px;
+                    fill: #FFF;
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0 10px;
+                list-style-type: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0 0 0 25px;
+                background-color: $main;
+                li {
+                    padding: 0 10px;
+                    a {
+                        text-decoration: none;
+                        color: $white;
+                    }
                 }
             }
         }
     }
-}
-
-footer {
-    padding: 20px 0;
-    background-color: $main;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50% 50% 0 0;
-    p {
-        color: $white;
+    main {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        border-radius: 0 25px 0 25px;
+        background-color: #FFF;
     }
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
+    footer {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        li {
-            margin: 5px 10px;
-            a {
-                text-decoration: none;
-                svg {
-                    width: 30px;
-                    height: 30px;
-                    fill: $white;
-                    transition: 0.5s all ease;
-                    &:hover {
-                        fill: $second;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+        border-radius: 25px 0 0 0;
+        background-color: #FFF;
+        span.corner {
+            width: 25px;
+            height: 25px;
+            background-color: $main;
+            span.bottom.left {
+                width: 25px;
+                height: 25px;
+                display: block;
+                background-color: #FFF;
+                border-radius: 0 0 0 25px;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 10px 0;
+            list-style-type: none;
+            border-radius: 0 25px 0 0;
+            background-color: $main;
+            li {
+                padding: 10px;
+                a {
+                    text-decoration: none;
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        fill: $white;
                     }
                 }
             }
@@ -141,18 +161,4 @@ footer {
     }
 }
 
-@media screen and (max-width: 600px) {
-    header nav {
-        a {
-            display: none;
-        }
-        div.button button {
-            &::before {
-                content: "";
-            }
-            svg {
-                display: inline;
-            }
-        }
-    }
-}
+
