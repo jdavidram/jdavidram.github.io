@@ -1,4 +1,4 @@
-import { Instagram, YouTube, Github, Threads, Bars } from "../Tools/Icons";
+import { Instagram, YouTube, Github, Threads, RightArrow } from "../Tools/Icons";
 import { ReactComponent as Logo } from "../logo.svg";
 import { useState } from "react";
 import "./Layout.scss";
@@ -6,21 +6,9 @@ import "./Layout.scss";
 function Header() {
     return (
         <nav>
-            <div id="logo">
-                <span className="logo">
-                    <Logo />
-                    <h1>jdavid.ram</h1>
-                </span>
-                <span className="corner">
-                    <span className="top left"></span>
-                </span>
-            </div>
             <div id="button">
-                <span className="corner">
-                    <span className="top right"></span>
-                </span>
                 <button>
-                    <Bars />
+                    <RightArrow />
                 </button>
                 <ul>
                     <li>
@@ -33,6 +21,18 @@ function Header() {
                         <a href="#">Contacto</a>
                     </li>
                 </ul>
+                <span className="corner">
+                    <span className="top right"></span>
+                </span>
+            </div>
+            <div id="logo">
+                <span className="corner">
+                    <span className="top left"></span>
+                </span>
+                <span className="logo">
+                    <Logo />
+                    <h1>jdavid.ram</h1>
+                </span>
             </div>
         </nav>
     );
