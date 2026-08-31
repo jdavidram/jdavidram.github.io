@@ -7,6 +7,10 @@ div#universe {
     grid-template-columns: 50px 1fr;
     grid-template-rows: 50px 1fr;
     background-color: $main;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s all ease;
     nav {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
@@ -91,6 +95,7 @@ div#universe {
                     height: 40px;
                     margin: 5px;
                     fill: #FFF;
+                    transition: 0.5s all ease;
                 }
             }
             ul {
@@ -113,10 +118,21 @@ div#universe {
         }
     }
     main {
+        height: calc(100vh - 50px);
         grid-column: 2 / 3;
         grid-row: 2 / 3;
         border-radius: 0 25px 0 25px;
         background-color: #FFF;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: $main;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: $second;
+        }
     }
     footer {
         grid-column: 1 / 2;
@@ -165,13 +181,34 @@ div#universe {
     }
 }
 
+ul.navAside {
+    height: calc(100vh);
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    li a {
+        text-decoration: none;
+        font-weight: bolder;
+        font-size: 2em;
+        color: $white;
+    }
+}
+
 @media screen and (max-width: 500px) {
-    div#universe nav div#button {
-        button {
-            display: block;
+    div#universe {
+        nav div#button {
+            button {
+                display: block;
+            }
+            ul {
+                display: none;
+            }
         }
-        ul {
-            display: none;
+        main::-webkit-scrollbar {
+            width: 0;
         }
     }
 }

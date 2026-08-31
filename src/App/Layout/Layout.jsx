@@ -1,24 +1,34 @@
 import { Instagram, YouTube, Github, Threads, RightArrow } from "../Tools/Icons";
 import { ReactComponent as Logo } from "../logo.svg";
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import "./Layout.scss";
+
+const showNav = () => {
+    let universe = document.getElementById("universe");
+    let arrow = document.getElementById("arrow");
+    if (universe.style.left !== "calc(-50px + 100vw)") {
+        universe.style.left = "calc(-50px + 100vw)";
+        arrow.style.transform = "rotate(-180deg)";
+    } else {
+        universe.style.left = "0px";
+        arrow.style.transform = "rotate(0deg)";
+    }
+};
 
 function Header() {
     return (
         <nav>
             <div id="button">
-                <button>
-                    <RightArrow />
+                <button onClick={ () => showNav() }>
+                    <RightArrow id="arrow" />
                 </button>
                 <ul>
                     <li>
-                        <a href="#">Inicio</a>
+                        <Link to="/">Inicio</Link>
                     </li>
                     <li>
-                        <a href="#">Cursos</a>
-                    </li>
-                    <li>
-                        <a href="#">Contacto</a>
+                        <Link to="/courses">Cursos</Link>
                     </li>
                 </ul>
                 <span className="corner">
@@ -46,22 +56,22 @@ function Footer() {
             </span>
             <ul>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/jdavid.ram/" target="_blank" rel="noopener noreferrer">
                         <Instagram />
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/david-ramirez-rodriguez/" target="_blank" rel="noopener noreferrer">
                         <YouTube />
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/jdavidram" target="_blank" rel="noopener noreferrer">
                         <Github />
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.threads.com/@jdavid.ram" target="_blank" rel="noopener noreferrer">
                         <Threads />
                     </a>
                 </li>
@@ -72,6 +82,15 @@ function Footer() {
 
 function Layout({ children }) {
     return (
+        <>
+        <ul className="navAside">
+            <li onClick={ () => showNav() }>
+                <Link to="/">Inicio</Link>
+            </li>
+            <li onClick={ () => showNav() }>
+                <Link to="/courses">Cursos</Link>
+            </li>
+        </ul>
         <div id="universe">
             <Header />
             <main>
@@ -79,6 +98,7 @@ function Layout({ children }) {
             </main>
             <Footer />
         </div>
+        </>
     );
 }
 
