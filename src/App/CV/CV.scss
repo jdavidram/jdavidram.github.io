@@ -1,0 +1,89 @@
+@import "../color";
+
+main {
+    padding: 0 25px;
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 200px;
+            border: 2px solid $black;
+        }
+        h1 {
+            padding: 20px 0 0 0;
+            color: $main;
+        }
+        div.dropdown {
+            padding: 0;
+            button {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h2 {
+                    color: $second;
+                }
+            }
+            ul.dropdown-menu li.dropdown-item {
+                cursor: pointer;
+            }
+        }
+        ul.contact {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid $main;
+            border-left: 1px solid $main;
+            li {
+                padding: 0 10px;
+                border-right: 1px solid $main;
+                border-left: 1px solid $main;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    section {
+        padding: 25px 0;
+        h2 {
+            color: $main;
+        }
+        ul {
+            list-style-type: none;
+            li {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    margin: 10px;
+                    fill: $main;
+                }
+                p {
+                    margin: 0;
+                    color: $second;
+                }
+            }
+        }
+        article {
+            margin: 20px 0;
+            padding: 0 0 0 20px;
+            border-left: 2px solid $main;
+            h3 {
+                color: $main;
+                a {
+                    text-decoration: none;
+                    color: $main;
+                }
+            }
+            h4 {
+                color: $main;
+            }
+        }
+    }
+}

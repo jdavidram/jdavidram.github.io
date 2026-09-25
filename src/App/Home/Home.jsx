@@ -6,14 +6,13 @@ import "./Home.scss";
 function Home() {
     return (
         <Layout>
-            <header>
+            <header id="home">
                 <div className="welcome">
                     <Bubble src={ hello } />
                 </div>
                 <aside>
-                    <h1>¡Aprende <strong>Calculo integral</strong> sin morir en el intento!</h1>
-                    <p>Tu mejor apoyo en las asignaturas de la U</p>
-                    <p>Escoge los <strong>cursos</strong> que necesites y ten el apoyo que necesitas en cada uno de ellos</p>
+                    <h1>¡Hola, soy <strong>David Ramirez</strong></h1>
+                    <p>Ingeniero ambiental en <strong>Colombia</strong></p>
                 </aside>
             </header>
         </Layout>

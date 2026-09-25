@@ -1,7 +1,6 @@
-import { Instagram, YouTube, Github, Threads, RightArrow } from "../Tools/Icons";
+import { Instagram, YouTube, Github, Threads, LinkedIn, RightArrow } from "../Tools/Icons";
 import { ReactComponent as Logo } from "../logo.svg";
 import { Link } from 'react-router-dom';
-import { useState } from "react";
 import "./Layout.scss";
 
 const showNav = () => {
@@ -30,6 +29,9 @@ function Header() {
                     <li>
                         <Link to="/courses">Cursos</Link>
                     </li>
+                    <li>
+                        <Link to="/cv">CV</Link>
+                    </li>
                 </ul>
                 <span className="corner">
                     <span className="top right"></span>
@@ -39,10 +41,12 @@ function Header() {
                 <span className="corner">
                     <span className="top left"></span>
                 </span>
-                <span className="logo">
-                    <Logo />
-                    <h1>jdavid.ram</h1>
-                </span>
+                <Link to="/">
+                    <span>
+                        <Logo />
+                        <h1>jdavid.ram</h1>
+                    </span>
+                </Link>
             </div>
         </nav>
     );
@@ -61,8 +65,13 @@ function Footer() {
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/david-ramirez-rodriguez/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.youtube.com/@jdavidram" target="_blank" rel="noopener noreferrer">
                         <YouTube />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/david-ramirez-rodriguez/" target="_blank" rel="noopener noreferrer">
+                        <LinkedIn />
                     </a>
                 </li>
                 <li>
@@ -90,6 +99,9 @@ function Layout({ children }) {
             <li onClick={ () => showNav() }>
                 <Link to="/courses">Cursos</Link>
             </li>
+            <li onClick={ () => showNav() }>
+                <Link to="/cv">CV</Link>
+            </li>
         </ul>
         <div id="universe">
             <Header />
@@ -102,4 +114,32 @@ function Layout({ children }) {
     );
 }
 
-export { Layout };
+function LayoutCV({ children }) {
+    return (
+        <div id="cv">
+            <nav>
+                <div id="button">
+                    <span className="corner">
+                        <span className="top right"></span>
+                    </span>
+                </div>
+                <div id="logo">
+                    <span className="corner">
+                        <span className="top left"></span>
+                    </span>
+                    <Link to="/">
+                        <span>
+                            {/* <Logo /> */}
+                            <h1>@jdavid.ram</h1>
+                        </span>
+                    </Link>
+                </div>
+            </nav>
+            <main>
+                { children }
+            </main>
+        </div>
+    );
+}
+
+export { Layout, LayoutCV };
