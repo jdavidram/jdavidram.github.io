@@ -1,58 +1,75 @@
-@import "../color";
+@import '../color';
 
-main {
-    padding: 0 25px;
+div#cv {
+    max-width: calc(100vw);
+    min-height: calc(100vh);
+    background-color: $white;
+    nav {
+        padding: 10px 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        a {
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bolder;
+            color: $third;
+        }
+    }
     header {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         img {
-            width: 200px;
-            border: 2px solid $black;
+            margin: 20px;
+            border: 1px solid $black;
         }
         h1 {
-            padding: 20px 0 0 0;
+            padding: 10px 0;
+            font-weight: bold;
             color: $main;
         }
-        div.dropdown {
-            padding: 0;
-            button {
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                h2 {
-                    color: $second;
-                }
-            }
-            ul.dropdown-menu li.dropdown-item {
-                cursor: pointer;
-            }
+        h2 {
+            color: $main;
         }
-        ul.contact {
-            list-style-type: none;
+        ul {
+            margin: 0;
             padding: 0;
+            list-style-type: none;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-right: 1px solid $main;
             border-left: 1px solid $main;
+            border-right: 1px solid $main;
             li {
                 padding: 0 10px;
-                border-right: 1px solid $main;
+                color: $second;
                 border-left: 1px solid $main;
+                border-right: 1px solid $main;
                 a {
-                    text-decoration: none;
+                    text-decoration: underline;
+                    color: $second;
                 }
             }
         }
     }
     section {
-        padding: 25px 0;
-        h2 {
+        margin: 20px;
+        // border: 1px solid $black;
+        h3 {
+            padding: 10px;
             color: $main;
         }
-        ul {
+        p {
+            padding: 0 20px;
+            color: $black;
+            strong {
+                font-weight: lighter;
+                color: $second;
+            }
+        }
+        & > ul {
             list-style-type: none;
             li {
                 display: flex;
@@ -61,28 +78,43 @@ main {
                 svg {
                     width: 30px;
                     height: 30px;
-                    margin: 10px;
+                    margin: 5px;
                     fill: $main;
                 }
                 p {
                     margin: 0;
-                    color: $second;
+                    padding: 0;
+                    color: $black;
+                    font-size: 1.2em;
                 }
             }
         }
         article {
-            margin: 20px 0;
-            padding: 0 0 0 20px;
-            border-left: 2px solid $main;
-            h3 {
-                color: $main;
-                a {
-                    text-decoration: none;
-                    color: $main;
-                }
-            }
+            margin: 10px;
+            // border: 1px solid red;
             h4 {
                 color: $main;
+                font-weight: bold;
+            }
+            a {
+                text-decoration: none;
+                h4 {
+                    text-decoration: underline;
+                    color: $main;
+                    transition: 0.5s all ease;
+                    &:hover {
+                        color: $second;
+                    }
+                }
+            }
+            h5 {
+                color: $main;
+            }
+            p {
+                margin: 0;
+            }
+            ul {
+                margin: 10px 0;
             }
         }
     }

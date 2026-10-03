@@ -1,5 +1,5 @@
-import { Bubble } from "../Tools/Bubble/Bubble";
-import { Layout } from "../Layout/Layout";
+import { Bubble } from "../../Tools/Bubble/Bubble";
+import { Layout } from '../Layout/Layout';
 import hello from "./hello.webp";
 import "./Home.scss";
 

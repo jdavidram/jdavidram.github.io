@@ -1,0 +1,31 @@
+{
+    "title": "Ingeniero ambiental",
+    "about": "Ingeniero Ambiental de la Universidad Nacional de Colombia con experiencia en proyectos de infraestructura vial, energética y de expansión de servicios públicos, realizando seguimiento ambiental en obra, implementación de Planes de Manejo Ambiental (PMA), cumplimiento normativo, gestión integral de residuos y relacionamiento comunitario. Experiencia en visitas técnicas, monitoreo de indicadores ambientales, elaboración de informes técnicos y acompañamiento a contratistas para la mitigación de impactos ambientales. Manejo herramientas GIS (ArcGIS y QGIS), análisis de datos con Python y SQL, y visualización de información para la toma de decisiones. Orientado al trabajo en campo, la gestión ambiental de proyectos de infraestructura y el cumplimiento de requisitos técnicos, legales y sociales.",
+    "experience": [{
+        "job": "Inspector ambiental",
+        "company": "Estyma S.A.",
+        "from": "Abril/2026",
+        "to": "Junio/2026",
+        "city": "Medellín, Antioquia, Colombia",
+        "activities": [
+            "Supervisión y seguimiento a la implementación de medidas del Plan de Manejo Ambiental (PMA) en proyectos de infraestructura vial.",
+            "Verificación del cumplimiento de obligaciones ambientales y requisitos normativos aplicables a la obra.",
+            "Elaboración de informes técnicos ambientales, reportes de seguimiento e identificación de acciones correctivas.",
+            "Coordinación con equipos constructivos para la mitigación de impactos asociados a ruido, material particulado, residuos y afectaciones al entorno.",
+            "Apoyo en actividades de monitoreo ambiental y seguimiento a indicadores de desempeño ambientales."
+        ]
+    }],
+    "education": [{
+        "degree": "Ingeniería ambiental",
+        "university": "Universidad Nacional de Colombia",
+        "from": "2019",
+        "to": "2026",
+        "city": "Medellín, Antioquia, Colombia"
+    }],
+    "certificates": [{
+        "course": "Análisis de datos - Nivel avanzado",
+        "academy": "Universidad de Antioquia",
+        "date": "Agosto/2025"
+    }],
+    "skills": ["Economía circular"]
+}

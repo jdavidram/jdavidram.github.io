@@ -1,14 +1,13 @@
-@import "../color";
+@import "../../color";
 
 header#home {
-    min-height: calc(100vh - 50px);
     padding: 20px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     div.welcome {
-        width: calc(100vw - 50px - 20px - 5px);
+        width: calc(100vw - 80px);
         max-width: 400px;
         display: flex;
         justify-content: center;
@@ -18,8 +17,8 @@ header#home {
         border-radius: 25px 0 0 0;
     }
     aside {
-        max-width: 440px;
-        margin: 10px;
+        max-width: 400px;
+        height: fit-content;
         padding: 20px;
         border-right: 5px solid $main;
         border-bottom: 5px solid $main;

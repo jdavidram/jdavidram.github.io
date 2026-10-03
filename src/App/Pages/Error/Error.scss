@@ -1,0 +1,12 @@
+@import '../../color';
+
+main.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    svg {
+        width: calc(100vw - 100px);
+        height: fit-content;
+    }
+}
